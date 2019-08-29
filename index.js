@@ -6,7 +6,11 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 client.prefix = PREFIX;
-client.prefixes = new Endb(`sqlite://${DATABASE}.sqlite`, { namespace: 'prefixes' });
+
+// Database
+const uri = `sqlite://${DATABASE}.sqlite`;
+client.prefixes = new Endb(uri, { namespace: 'prefixes' });
+client.balance = new Endb(uri, { namespace: 'balance' });
 
 // Command Handler
 const commandFiles = fs.readdirSync(COMMAND_DIR).filter(file => file.endsWith('.js'));
