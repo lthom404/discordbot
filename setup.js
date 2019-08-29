@@ -9,7 +9,7 @@ const prompts = [{
     {
         type: 'input',
         name: 'prefix',
-        message: 'Enter the prefix'
+        message: 'Enter the bot\'s prefix'
     },
     {
         type: 'input',
@@ -19,22 +19,24 @@ const prompts = [{
     {
         type: 'input',
         name: 'database',
-        message: 'Enter the database name. It can be anything you want'
+        message: 'Enter the path to database. Example: ./data/mydata'
     }
 ];
 
 (async () => {
     const answers = await inquirer.prompt(prompts);
     const data = Object.assign({
+        TOKEN: null,
+        PREFIX: '!',
+        COMMAND_DIR: './commands',
+        EVENT_DIR: './events',
+        OWNER: null,
+        DATABASE: './database'
+    }, {
         TOKEN: answers.token,
         PREFIX: answers.prefix,
         OWNER: answers.owner,
         DATABASE: answers.database
-    }, {
-        TOKEN: null,
-        PREFIX: '!',
-        OWNER: null,
-        DATABASE: 'database'
-    })
+    });
     fs.writeFileSync('./config.json', JSON.stringify(data));
 })();
