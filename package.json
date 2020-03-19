@@ -6,25 +6,21 @@
   "scripts": {
     "start": "node index.js",
     "setup": "node setup.js",
-    "postinstall": "node setup.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "node setup.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enhancd/discordbot.git"
+    "url": "git+https://github.com/chroventer/discordbot.git"
   },
-  "keywords": [],
-  "author": "enhancd (https://github.com/enhancd)",
-  "license": "MIT",
+  "author": "chroventer (https://github.com/chroventer)",
   "bugs": {
-    "url": "https://github.com/enhancd/discordbot/issues"
+    "url": "https://github.com/chroventer/discordbot/issues"
   },
-  "homepage": "https://github.com/enhancd/discordbot#readme",
+  "homepage": "https://github.com/chroventer/discordbot#readme",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "endb": "^0.15.2",
-    "inquirer": "^7.0.0",
+    "discord.js": "^12.0.2",
+    "endb": "^0.21.5",
     "sql": "^0.78.0",
-    "sqlite3": "^4.1.0"
+    "sqlite3": "^4.1.1"
   }
 }

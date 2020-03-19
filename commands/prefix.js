@@ -1,11 +1,11 @@
 module.exports = {
     name: 'prefix',
     description: 'Changes the guild prefix.',
-    async run(message, args) {
+    async run({ client, channel, guild }, [...prefix]) {
         if (!args.length) {
-            return message.channel.send('Provide the prefix to set guild prefix');
+            return channel.send('Provide the prefix to set guild prefix');
         }
-        await message.client.prefixes.set(message.guild.id, args[0]);
-        return message.channel.send(`Prefix is now ${await message.client.prefixes.get(message.guild.id) || message.client.prefix}`);
+        await client.Guild.set(guild.id, prefix.join(' '), 'prefix');
+        return channel.send(`Prefix is now \`${prefix.join(' ') || client.prefix}\``);
     }
-}
+};

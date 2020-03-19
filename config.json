@@ -1,0 +1,8 @@
+{
+    "TOKEN": "1234567890",
+    "PREFIX": "!",
+    "COMMAND_DIR": "./commands",
+    "EVENT_DIR": "./events",
+    "OWNER": "1234567890",
+    "DATABASE": "./data/database.sqlite"
+}
