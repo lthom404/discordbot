@@ -16,8 +16,10 @@ client.events = new Collection();
 client.prefix = PREFIX;
 
 // Database
-const uri = `sqlite://${DATABASE}.sqlite`;
-client.Guild = new Endb({ uri, table: 'guild' });
+client.Guild = new Endb({
+  uri: `sqlite://${DATABASE}`,
+  table: 'guild'
+});
 
 // Command Handler
 const commandFiles = readdirSync(COMMAND_DIR).filter(file =>
@@ -38,5 +40,8 @@ for (const file of eventFiles) {
   );
   delete require.cache[require.resolve(`${EVENT_DIR}/${file}`)];
 }
+
+process.on('uncaughtException', error => console.error(error));
+process.on('unhandledRejection', reason => console.log(reason));
 
 client.login(TOKEN);
