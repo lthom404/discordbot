@@ -1,8 +1,8 @@
 {
-	"TOKEN": "NjUwMjU1NTkyMTY5OTMwNzY2.XooALA.2f7NDP-oQV6Su-1NByf9nS8Ajw0",
+	"TOKEN": "CLIENT/BOT TOKEN",
 	"PREFIX": "!",
 	"COMMAND_DIR": "./commands",
 	"EVENT_DIR": "./events",
-	"OWNER": "1234567890",
+	"OWNER": "BOT OWNER ID",
 	"DATABASE": "./database.sqlite"
 }

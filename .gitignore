@@ -14,3 +14,13 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Database
+data/
+database.sqlite
+
+# Prettier
+.prettierrc
+
+# Configuration file
+config.json
